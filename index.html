@@ -33,10 +33,10 @@
     <div id="root">
         <ul class="lh-lg">
             <li v-for="(todo, index) in todos" :key="todo.text">
-                <span id="sbarrato" v-if="todo.done">
+                <span @click="toggleTodo(index)" id="sbarrato" v-if="todo.done">
                     {{ todo.text }}
                 </span>
-                <span v-else>
+                <span @click="toggleTodo(index)" v-else>
                     {{ todo.text }}
                 </span>
                 <button @click="removeTodo(index)" type="button" class="btn-close ms-2" aria-label="Close">
@@ -44,7 +44,7 @@
             </li>
         </ul>
 
-        <input type="text" v-model="newTodo" class="ms-3">
+        <input type="text" v-model="newTodo" @keyUp.enter="addTodo" class="ms-3">
         <button type="button" @click="addTodo" class="btn btn-warning ms-2">Aggiungi</button>
     </div>
 

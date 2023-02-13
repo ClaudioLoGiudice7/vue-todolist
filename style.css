@@ -1,3 +1,7 @@
+span {
+    cursor: pointer;
+}
+
 #sbarrato {
     text-decoration: line-through;
 }
